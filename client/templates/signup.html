@@ -1,0 +1,54 @@
+<template name="signupForm">
+    <div class=row>
+        <div class="col-md-7 col-centered">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <strong>Sign Up</strong>
+                </div>
+                <div class="panel-body">
+                    <form role=form class="" action="#">
+
+
+                            <div class="form-group col-md-6">
+                            <label for="firname">First Name</label>
+                            <input type="text" class="form-control" name="firname" id="firname" value="Nyaundi">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="secname">Last Name</label>
+                            <input type="text" class="form-control" name="secname" id="secname" value="Brian">
+                            </div>
+
+
+                        <div class="form-group col-md-12">
+                            <label for="username">Username</label>
+                            <input id="name" class="form-control" name="username" type="text" placeholder="Your Username (or Email future)">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="@gmail.com">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="password">Password</label>
+                            <input id="password" class="form-control" name="password" type="password" placeholder="Your Password">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="password2">Retype Password</label>
+                            <input type="password" class="form-control" id="password2" name="password2" value="pass" placeholder="Retype Password">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                        <button type="button" id="signup" class="btn  btn-default">Sign Up</button>
+                            </div>
+
+                        Already have an account?
+                        <a  id="sigpl" href="/login" class="" >Sign In</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</template>

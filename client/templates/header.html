@@ -1,0 +1,54 @@
+<template name="header">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand label-value" style="background-color: #f9f9cc;margin-top: 2px;" href="/">Things List<span style="font-size: small;color: deepskyblue;padding-left: 5px">BETA</span></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                {{>searchForm}}
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if currentUser}}
+                    <li>
+                        <a href="{{pathFor route='new'}}"><i id="openListForm" class="glyphicon glyphicon-edit">New</i></a>
+                    </li>
+                    <li>
+                        {{>notificationsT}}
+                    </li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <!--li><a href="#"></a></li-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{currentUserName}} <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/account_info/{{currentUserId}}" id="toggle-accountInfo">Account Info</a></li>
+                                    <li><a id="signout" href="#">logout</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Settings</a></li>
+                                    <li>   <a href="#">About</a>  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    {{else}}
+                        <li>
+                         <a href="/login" id="open" class="text-info">Login for more</a>
+                            {{#if loggingIn }}
+                                Logging in...
+                                {{/if}}
+
+                   <!--was login form-->
+
+                        </li>
+                    {{/if}}
+
+
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>
+
+</template>

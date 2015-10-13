@@ -1,0 +1,60 @@
+<template name="list_article">
+
+    <article id="{{_id}}" class=" col-md-12  well">
+        <div class="row">
+
+            <div class="col-md-12 ">
+                <span class="label-value">{{itemsCount}}</span>
+                <a href="#" class=" text-capitalize heading-text"> {{heading}}</a>
+
+            </div>
+            <!--Heading-->
+            <div class="col-md-12 mt5">
+
+                <a class="label-value" href="{{pathFor route='account_info'}}">{{getUser}}</a>
+                <span class="label-value pull-right">{{dateFormated}}</span>
+                {{#if forUser}}
+                    <a class="btn btn-danger pull-right lv delete-list" href="#">Delete</a>
+                    <a class="btn btn-default pull-right lv" href="/edit/{{objID}}">Edit</a>
+                {{/if}}
+
+            </div>
+
+
+            <div class="col-md-12">
+                {{#each tagItems}}
+                    <a href="#" class="btn btn-primary center"> {{name}} </a>
+                {{/each}}
+
+            </div>
+            <!--Tags-->
+
+            <div class="col-md-11 itm">
+                <ol>
+                    {{#each listItems}}
+                        <li class="litem" id="{{_id}}">
+                            {{item}}
+                            <span class="pull-right lv"><a href="#" class="up" id="{{_id}}"> {{upsCount}} up</a></span>
+                            <span class="pull-right lv"><a href="#" class="down " id="{{_id}}"> {{downsCount}} down</a></span>
+
+                        </li>
+                    {{/each}}
+                </ol>
+
+            </div>
+            <!--Items-->
+            <div class="col-md-12">
+                <span class="label-value" >{{upVotesCount}}</span><a class="upvote btn btn-default" href="#"><i class="glyphicon glyphicon-arrow-up"></i></a>
+                <span class="label-value">{{downVotesCount}}</span><a class="downvote btn btn-default" href="#"><i class="glyphicon glyphicon-arrow-down"></i></a>
+
+                <span class="label-value">{{shares}}</span><a class="btn btn-default" href="#"><i class="glyphicon glyphicon-share"></i></a>
+                <span class="label-value">{{favsCount}}</span> <a class="fav btn btn-default" href="#">star/fav<i class="glyphicon glyphicon-star-empty"></i></a>
+            </div>
+            <hr>
+            <!--Links-->
+        </div>
+    </article>
+
+
+
+</template>

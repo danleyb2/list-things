@@ -1,0 +1,7 @@
+<template name="main">
+    {{#if currentUser}}
+    {{else}}
+        {{>loginBanner}}
+    {{/if}}
+    {{>feed}}
+</template>

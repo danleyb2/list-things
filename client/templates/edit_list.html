@@ -1,0 +1,69 @@
+<template name="editList">
+    {{#if this}}
+        <div class="col-md-12 " style="">
+            <div class="col-centered listForm col-md-10">
+                <form class="" action="#" role="form">
+
+                    <section class="row ">
+                        <div class="col col-md-3 itemsCount">
+                            <input class="col col-lg-4 col-md-12 form-control text-center font-xlarge" type="text" id="itemsCount" value="{{itemsCount}}" placeholder="How Many?">
+                        </div>
+                        <div class="col col-md-9 head-ing">
+                            <input class="col col-lg-4 col-md-12 form-control heading font-xlarge" type="text" id="{{_id}}" placeholder="List Heading" value="{{heading}}">
+                        </div><!-- controls -->
+                    </section><!-- row -->
+
+                    <fieldset >
+                    <div class="form-group form-post col-md-12 well" id="{{_id}}">
+                        <div class="items">
+                        {{#each listItems}}
+                            <section class="row item">
+                                <div class="col-md-1">
+                                    <a href="#" class="btn btn-default item_count_label">-</a>
+                                </div>
+                                <div class="controls col-md-10">
+                                    <input class="col col-lg-8 col-md-9 form-control l-item" type="text" id="{{_id}}" name="myemail" value="{{item}}" placeholder="List item" />
+                                </div><!-- controls -->
+                                <div class="col-md-1">
+                                    <a href="#" class="btn btn-default removeRow" ><i class="glyphicon glyphicon-remove"></i></a>
+                                </div>
+                            </section><!-- row -->
+                        {{/each}}
+
+                        </div>
+                        <section class="row item">
+                            <div class="col-md-1 pull-right">
+                                <a href="#" class="btn btn-default createField"><i class="glyphicon glyphicon-plus"></i></a>
+                            </div>
+                        </section><!-- row -->
+                    </div>
+
+                    </fieldset>
+                    <section class="row ">
+                        <div class="col-md-12 ">
+                            <div class="col-md-12 no-padding tags-parent form-control">
+                                <div id="tags-group">
+                                    {{#each tagItems}}
+
+                                        <div class="tag-added">
+                                            <span class="theTag" id="{{_id}}">{{name}}</span>
+                                            <i class="glyphicon glyphicon-remove-circle remove-tag" onclick="this.parentNode.remove();" style="cursor:default;"></i>
+                                        </div>
+
+                                    {{/each}}
+                                </div>
+                                <input class="form-control-inline" type="text" name="tags" id="tags"  placeholder="Add Tag" >
+                            </div>
+                        </div><!-- controls -->
+                    </section><!-- row -->
+                    <section class="row ">
+                        <div class="col-md-12 ">
+                            <button class="btn btn-primary pull-right" id="updatePost" type="button">Update List</button>
+                        </div><!-- controls -->
+                    </section><!-- row -->
+
+                </form>
+            </div>
+        </div>
+    {{/if}}
+</template>
