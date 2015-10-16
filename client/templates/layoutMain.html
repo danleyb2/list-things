@@ -1,33 +1,12 @@
 <template name="layoutMain">
     {{>header}}
-    <div id="wrapper" style="margin-top: 52px">
+    <div class="container mt60">
 
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                       Info
-                    </a>
-                </li>
-                <li>
-
-                    <div class="well"><a href="/">#Top Tags</a></div>
-                </li>
-                <li>
-                    <a href="/second">Second</a>
-                </li>
-            </ul>
-        </div>
-
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                {{>yield}}
-            </div>
-        </div>
-
-
+        {{>yield}}
 
 
     </div>
+
+
     {{>footer}}
 </template>
