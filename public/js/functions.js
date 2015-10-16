@@ -9,6 +9,9 @@ function getListItems(){
 function getHeading(){
     return $("#heading")[0].value;
 }
+function upDateTags(){
+
+}
 function getTags(){
     //rtAr= $("#tags")[0].value.split(' ');
     return $('.theTag').text().split('#').splice(1);

@@ -10,6 +10,6 @@ Template.feed.helpers({
         return lists.find({heading: currentlistHeading}, {sort: {id: -1, name: 1}});
     },
     'list': function () {
-        return lists.find({}, {sort: {_id: -1}}).fetch();
+        return lists.find({}, {sort: {datePosted: -1}}).fetch();
     }
 });
