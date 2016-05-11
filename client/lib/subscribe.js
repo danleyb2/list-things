@@ -3,3 +3,4 @@ Meteor.subscribe('theTags');
 Meteor.subscribe('theItems');
 Meteor.subscribe('userName');
 Meteor.subscribe('theNotifications');
+Meteor.subscribe('usersData');

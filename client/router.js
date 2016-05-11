@@ -39,11 +39,25 @@ Router.route('/edit/:_id', {
     name:'edit',
     template:'editList'
 });
-
+Router.route('/profile',{
+    //name:'my_account_info',
+    template:'account_info',
+    data: function(){
+        console.log(Meteor.user());
+        return Meteor.user();
+    },
+    waitOn: function(){
+        //return Meteor.subscribe('userData');
+    },
+    subscriptions: function(){
+        //return Meteor.subscribe('userData');
+    }
+});
 Router.route('/account_info/:createdBy',{
     name:'account_info',
     data: function(){
         var usr=this.params.createdBy;
+        console.log(Meteor.users.findOne({_id:usr}));
         return Meteor.users.findOne({_id:usr});
 
     },

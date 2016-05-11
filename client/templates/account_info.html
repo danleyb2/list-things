@@ -1,8 +1,100 @@
 <template name="accountInfo">
-<div class="col-md-12 account-info" style="height: 400px; position:relative;background-color: #e4b9c0">
-<div>
-    <p>{{username}}</p>
-</div>
+<div class="col-md-12 account-info" style="">
+    <style>
+        .account-info{
+            padding: 5px;
+            height: 400px;
+            position:relative;
+            background-color: #e4b9c0
+        }
+        .profile-img{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .left{
+            display: inline-block;
+            width: 30%;
+            border-right: 1px solid #000000;
+        }
+        .right{
+            display: inline-block;
+            width: 65%;
+        }
+        .hidden-form{
+            /*display: none;*/
+
+        }
+    </style>
+
+    <div class="left">
+        <img src="#" class="profile-img">
+        <div style="display: inline-block;">
+            <div>  {{>usernameTemplate}}  </div>
+            <div>  {{>fullnameTemplate}}  </div>
+            <div>  {{>taglineTemplate}}  </div>
+            <div>{{email}}</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div>
+            <div>
+                <a href="#">{{listCount}}  <span>lists</span></a>
+            </div>
+            <div>
+                <a href="#">{{favoriteCount}} <span>favorites</span></a>
+            </div>
+
+        </div>
+    </div>
 
 </div>
 </template>
+<template name="usernameTemplate">
+    {{#if edit}}
+        <input class="" autocomplete="off" placeholder="username" id="username" value="{{username}}"  type="text">
+        {{>saveCancel}}
+    {{else}}
+        <label for="username">{{username}}</label>
+        {{>editLink}}
+    {{/if}}
+</template>
+<template name="fullnameTemplate">
+    {{#if edit}}
+        <input class="" autocomplete="off" placeholder="first name" id="firstname"  value="{{profile.firstname}}"   type="text">
+        <input class="" autocomplete="off" placeholder="last name"  id="lastname"   value="{{profile.lastname}}"    type="text">
+        {{>saveCancel}}
+    {{else}}
+        <label for="fullname">{{profile.firstname}} {{profile.lastname}}</label>
+        {{>editLink}}
+    {{/if}}
+
+</template>
+<template name="taglineTemplate">
+    {{#if edit}}
+        <input class="" autocomplete="off" placeholder="tag line" id="tagline" value="{{profile.tagline}}"  type="text">
+        {{>saveCancel}}
+    {{else}}
+        <label for="tagline">{{profile.tagline}}</label>
+        {{>editLink}}
+    {{/if}}
+
+</template>
+<template name="emailTemplate">
+    {{#if edit}}
+        {{>saveCancel}}
+    {{else}}
+    {{/if}}
+
+</template>
+
+<!--link templates -->
+<template name="saveCancel">
+    <a class="save"  href="#">save <i class="glyphicon glyphicon-floppy-save"></i></a>
+    <a class="cancel"  href="#">cancel <i class="glyphicon glyphicon-remove"></i></a>
+</template>
+<template name="editLink">
+    <a class="edit" href="#">edit <i class="glyphicon glyphicon-pencil"></i></a>
+</template>
+<!--End link templates -->
