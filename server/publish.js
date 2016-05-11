@@ -13,18 +13,25 @@ Meteor.publish('theNotifications', function(){
         return notifications.find({toUser: this.userId}, {sort: {date: -1}, limit: 20});
     }
 });
-Meteor.publish("userName", function () {
+/*Meteor.publish("userfName", function () {
     return Meteor.users.find({},
         {fields:
         {
             services: 0,
-            /*'profile':1,*/
+            'profile':0,
             'createdAt':0
         }
         });
 
-});
-
+});*//*
+Meteor.publish("userData", function () {
+    if (this.userId) {
+        return Meteor.users.find({_id: this.userId},
+            {fields: {'other': 1, 'things': 1}});
+    } else {
+        this.ready();
+    }
+});*/
 
 /*
  // publish dependent documents and simulate joins

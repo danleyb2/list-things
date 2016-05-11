@@ -157,7 +157,15 @@ Meteor.methods({
         //todo:update list, remove from set and decrement tags count
        // lists.remove({_id:listId,createdBy:Meteor.userId()});
     },
+    'setUsername': function (newUsername) {
 
+        Meteor.setUsername(Meteor.userId(), newUsername);
+    },
+    'setTagLine': function (newTagline) {
+        //Accounts.setUsername(Meteor.userId(), newUsername);
+        Meteor.users.update(Meteor.userId,{$upset: {'profile.tagline': newTagline}});
+
+    },
     'listUpVote': function (listId) {
         if(Meteor.userId()!=null) {
             lists.update(listId, {$addToSet: {upVotes: Meteor.userId()}});
