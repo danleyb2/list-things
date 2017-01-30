@@ -6,3 +6,4 @@
 /public/fonts/*
 
 .idea/*
+node_modules
