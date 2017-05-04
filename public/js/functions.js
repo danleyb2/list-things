@@ -115,7 +115,3 @@ function createTagNode(tag){
         '</div>';
     return tagNode;
 }
-$(document).ready(function(){
-    console.log('Dom ready');
-
-});
